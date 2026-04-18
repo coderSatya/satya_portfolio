@@ -3,224 +3,212 @@
 export const portfolioData = {
   personal: {
     name: "Satya Prakash",
-    role: "Software Engineer",
-    tagline: "Frontend Developer",
-    experience: "2.5+",
+    role: "AI-Integrated Frontend Developer",
+    experience: "4+ Years",
     location: "Kolkata, India",
-    email: "satya.prakash@example.com",
-    github: "https://github.com/satyaprakash",
-    linkedin: "https://linkedin.com/in/satyaprakash",
-    resumeUrl: "/resume.pdf",
-    bio: "I'm a passionate Frontend Developer with 2.5+ years of experience crafting high-performance web applications. I specialize in React.js and Next.js, with a strong eye for design and user experience. Currently at Webskitters, I transform complex problems into elegant, scalable solutions.",
-    avatar: "/avatar-placeholder.jpg",
+    phone: "+91-8506056814",
+    email: "sprakash6233@gmail.com",
+    github: "https://github.com/coderSatya",
+    linkedin: "https://linkedin.com/in/satya-prakash-sp",
+    tagline: "Building Scalable Web Apps with React, Next.js & AI",
+    summary:
+      "Frontend Developer with 4+ years of experience building scalable, SEO-optimized, high-performance web applications using React.js and Next.js. Improved page load speed by 40% and user engagement by 25%. Strong in SSR, SSG, APIs, and AI-assisted development.",
   },
 
-  stats: {
-    experience: { value: 2.5, label: "Years Experience", suffix: "+" },
-    projects: { value: 20, label: "Projects Delivered", suffix: "+" },
-    performance: { value: 40, label: "Performance Improved", suffix: "%" },
-    clients: { value: 15, label: "Happy Clients", suffix: "+" },
+  skills: {
+    frontend: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+    ],
+    ui: [
+      "Tailwind CSS",
+      "Material UI (MUI)",
+      "Ant Design",
+      "Shadcn",
+      "Radix UI",
+      "Responsive Design",
+    ],
+    stateAndData: [
+      "Redux",
+      "Zustand",
+      "TanStack React Query",
+      "REST APIs",
+      "GraphQL",
+    ],
+    performance: [
+      "SSR",
+      "SSG",
+      "PWA",
+      "Web Vitals",
+      "SEO Optimization",
+      "Code Splitting",
+      "Lazy Loading",
+    ],
+    tools: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Bitbucket",
+      "Postman",
+      "VS Code",
+    ],
+    ai: [
+      "ChatGPT",
+      "Claude",
+      "GitHub Copilot",
+      "Cursor AI",
+      "n8n",
+      "Prompt Engineering",
+    ],
   },
 
-  experience: [
-    {
-      id: 1,
-      company: "Webskitters Technology Solutions Pvt. Ltd.",
-      role: "JavaScript Developer",
-      type: "Full-time",
-      period: "2022 — Present",
-      duration: "2.5+ years",
-      location: "Kolkata, India",
-      description:
-        "Working as a frontend-focused JavaScript developer, building scalable web applications and contributing to full-stack features using React.js, Next.js, and Node.js.",
-      responsibilities: [
-        "Developed and maintained 10+ client-facing React.js & Next.js applications",
-        "Implemented complex UI components with Tailwind CSS and Framer Motion animations",
-        "Integrated RESTful APIs and optimized data fetching with React Query",
-        "Improved application load time by 40% through code splitting, lazy loading, and image optimization",
-        "Collaborated with designers to implement pixel-perfect, responsive interfaces",
-        "Set up CI/CD pipelines and contributed to DevOps workflows",
-        "Mentored junior developers and conducted code reviews",
-        "Built dynamic template systems used across multiple client deployments",
-      ],
-      tech: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "React Query", "Node.js", "PostgreSQL"],
-    },
+  achievements: [
+    "Improved page load speed by 40%",
+    "Increased user engagement by 25%",
+    "Handled large datasets (8000+ records)",
+    "Delivered multiple production-level applications",
   ],
 
   education: [
     {
-      id: 1,
       degree: "Master of Computer Applications (MCA)",
-      institution: "University Institute of Technology",
-      university: "Burdwan University",
-      year: "2019 — 2021",
-      grade: "First Class",
-      location: "West Bengal, India",
-      highlights: ["Full-stack development", "Data Structures & Algorithms", "Database Management", "Software Engineering"],
+      college: "Marwari College, Ranchi",
+      university: "Ranchi University",
+      duration: "2018 – 2021",
+      percentage: "81.65%",
     },
     {
-      id: 2,
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "College of Technology",
-      university: "Burdwan University",
-      year: "2016 — 2019",
-      grade: "First Class",
-      location: "West Bengal, India",
+      degree: "B.Sc. IT",
+      college: "Marwari College, Ranchi",
+      university: "Ranchi University",
+      duration: "2014 – 2017",
+      honours: "74.13%",
+      aggregate: "65.50%",
+    },
+    {
+      degree: "Class 12 (CBSE)",
+      school: "Saraswati Shishu Vidya Mandir, Ranchi",
+      year: "2013",
+      percentage: "64.2%",
+    },
+    {
+      degree: "Class 10 (ICSE)",
+      school: "Don Bosco Academy",
+      year: "2011",
+      percentage: "76.4%",
+    },
+  ],
+
+  experience: [
+    {
+      company: "Indus Net Technologies",
+      role: "Software Engineer",
+      duration: "Jul 2025 – Present",
+      location: "Kolkata",
+      projects: [
+        {
+          name: "Bengal – Soulfully Yours",
+          description:
+            "Built SEO-optimized tourism pages using Next.js, Drupal CMS, and SSR/SSG. Developed AI-driven tourism modules with dynamic routing.",
+        },
+        {
+          name: "Lupin Diagnostics",
+          description:
+            "Developed a full medical booking system with filtering, scheduling, and GraphQL APIs for efficient data handling.",
+        },
+      ],
+    },
+    {
+      company: "Webskitters Technology Solutions",
+      role: "JavaScript Developer (ReactJS)",
+      duration: "Sep 2023 – Jul 2025",
+      location: "Kolkata",
+      projects: [
+        {
+          name: "American Murder Song",
+          description:
+            "E-commerce platform with PayPal integration, SSR optimization, and improved performance by 40%.",
+        },
+        {
+          name: "Nurse Report",
+          description:
+            "Healthcare hiring platform with 8000+ hospital data, advanced filtering, dashboards, and charts.",
+        },
+      ],
+    },
+    {
+      company: "Jai Infoway Pvt. Ltd.",
+      role: "Software Engineer",
+      duration: "Apr 2023 – Sep 2023",
+      location: "Ranchi",
+      projects: [
+        {
+          name: "JKYOG Website Migration",
+          description:
+            "Migrated Drupal website to Next.js with SSR, improving performance and SEO.",
+        },
+      ],
+    },
+    {
+      company: "CodeClouds IT Solutions",
+      role: "Frontend Developer",
+      duration: "Dec 2022 – Apr 2023",
+      location: "Kolkata",
+      projects: [
+        {
+          name: "CADS Reports & PYPA HR",
+          description:
+            "Built reusable UI components and integrated APIs for analytics and HR platforms.",
+        },
+      ],
     },
   ],
 
   projects: [
     {
-      id: 1,
-      title: "MultiVendor E-Commerce Platform",
+      name: "Bengal – Soulfully Yours",
+      url: "https://soulfulbengal.com/",
+      tech: ["Next.js", "Drupal", "SSR"],
       description:
-        "A full-featured e-commerce platform supporting multiple vendors with Stripe & Razorpay payment integration, real-time inventory management, order tracking, and an admin dashboard.",
-      longDescription:
-        "Built a scalable multi-vendor marketplace with secure payment processing. Implemented complex cart logic, vendor-specific dashboards, coupon systems, and automated email notifications.",
-      tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Stripe", "Razorpay", "PostgreSQL", "Prisma"],
-      liveUrl: "https://ecommerce-demo.example.com",
-      githubUrl: "#",
-      color: "#00f5ff",
-      category: "Full Stack",
-      featured: true,
+        "Tourism platform with SEO optimization and AI-driven content modules.",
     },
     {
-      id: 2,
-      title: "Dynamic Template Builder",
+      name: "Lupin Diagnostics",
+      url: "https://www.lupindiagnostics.com/",
+      tech: ["React", "GraphQL"],
       description:
-        "A no-code visual template system where users can drag-and-drop components to build custom pages. Powers 5+ client websites from a single codebase.",
-      longDescription:
-        "Architected a dynamic template engine supporting 20+ component types with real-time preview. JSON-driven configuration allows non-technical users to create complex layouts.",
-      tech: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "React DnD", "JSON Schema"],
-      liveUrl: "https://template-builder.example.com",
-      githubUrl: "#",
-      color: "#8b5cf6",
-      category: "Frontend",
-      featured: true,
+        "Medical booking system with filtering, scheduling, and API integration.",
     },
     {
-      id: 3,
-      title: "Large Dataset Analytics Dashboard",
+      name: "Nurse Report",
+      url: "https://nurse.report/",
+      tech: ["React", "Redux", "React Query"],
       description:
-        "A high-performance data visualization dashboard handling 100K+ records with virtual scrolling, real-time filtering, and interactive charts.",
-      longDescription:
-        "Solved performance challenges for massive datasets using virtualization, pagination, and Web Workers. Features real-time data updates via WebSocket and exportable reports.",
-      tech: ["React.js", "TypeScript", "React Query", "Recharts", "Web Workers", "WebSocket", "Node.js"],
-      liveUrl: "https://analytics-demo.example.com",
-      githubUrl: "#",
-      color: "#ff2d78",
-      category: "Data / Full Stack",
-      featured: true,
+        "Healthcare hiring platform with 8000+ hospital data and dashboards.",
     },
     {
-      id: 4,
-      title: "AI Content Generator",
+      name: "American Murder Song",
+      tech: ["Next.js", "PayPal"],
       description:
-        "An AI-powered content creation tool integrating OpenAI GPT API for generating blog posts, product descriptions, and social media copy.",
-      tech: ["Next.js", "OpenAI API", "Tailwind CSS", "Framer Motion", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
-      color: "#f0b429",
-      category: "AI / Full Stack",
-      featured: false,
+        "E-commerce platform with payment integration and optimized performance.",
     },
-  ],
-
-  skills: {
-    frontend: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 92 },
-      { name: "JavaScript", level: 93 },
-      { name: "TypeScript", level: 82 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Framer Motion", level: 80 },
-      { name: "HTML5 / CSS3", level: 97 },
-      { name: "Redux / Zustand", level: 78 },
-    ],
-    backend: [
-      { name: "Node.js", level: 72 },
-      { name: "Express.js", level: 70 },
-      { name: "PostgreSQL", level: 68 },
-      { name: "REST APIs", level: 88 },
-      { name: "Prisma ORM", level: 72 },
-    ],
-    tools: [
-      { name: "Git / GitHub", level: 90 },
-      { name: "VS Code", level: 95 },
-      { name: "Figma", level: 75 },
-      { name: "Docker", level: 60 },
-      { name: "Vercel / Netlify", level: 88 },
-      { name: "Postman", level: 85 },
-    ],
-  },
-
-  achievements: [
-    {
-      icon: "🚀",
-      value: "20+",
-      label: "Projects Delivered",
-      description: "Successfully shipped production-grade applications",
-    },
-    {
-      icon: "⚡",
-      value: "40%",
-      label: "Performance Boost",
-      description: "Average load time improvement across projects",
-    },
-    {
-      icon: "👥",
-      value: "15+",
-      label: "Happy Clients",
-      description: "Across diverse industries and domains",
-    },
-    {
-      icon: "🛠️",
-      value: "10+",
-      label: "Technologies",
-      description: "Mastered modern frontend tech stack",
-    },
-  ],
-
-  hobbies: [
-    { name: "Chess", icon: "♟️", description: "Strategic thinking & pattern recognition" },
-    { name: "Cricket", icon: "🏏", description: "Team spirit & competitive mindset" },
-    { name: "AI & ML", icon: "🤖", description: "Exploring the frontiers of artificial intelligence" },
-    { name: "YouTube", icon: "📺", description: "Tech content & developer productivity" },
-    { name: "Open Source", icon: "💻", description: "Contributing to the dev community" },
-    { name: "Reading", icon: "📚", description: "Tech blogs, system design & philosophy" },
   ],
 };
 
-// Chatbot knowledge for AI system prompt
-export const chatbotSystemPrompt = `You are Satya's personal AI assistant on his developer portfolio. You are friendly, concise, and helpful. Answer questions about Satya based on the following data:
-
+export const chatbotSystemPrompt = `You are Satya's personal AI assistant on his developer portfolio. Answer questions about Satya based on this context:
 NAME: Satya Prakash
-ROLE: Frontend Developer / Software Engineer
-EXPERIENCE: 2.5+ years at Webskitters Technology Solutions
-LOCATION: Kolkata, India
+ROLE: AI-Integrated Frontend Developer
+PHONE: +91-8506056814
+EMAIL: sprakash6233@gmail.com
+EXPERIENCE: 4+ Years (Indus Net, Webskitters, Jai Infoway, CodeClouds)
+SKILLS: React.js, Next.js, Redux, Zustand, Tailwind CSS, GraphQL, SSR, AI (ChatGPT, Copilot).
+EDUCATION: MCA, B.Sc. IT
+PROJECTS: Bengal Tourism, Lupin Diagnostics, Nurse Report, American Murder Song.
 
-SKILLS:
-- Frontend: React.js (95%), Next.js (92%), JavaScript (93%), TypeScript (82%), Tailwind CSS (95%), HTML/CSS
-- Backend: Node.js, Express.js, PostgreSQL, REST APIs, Prisma
-- Tools: Git, Docker, Figma, Vercel, Postman
-
-PROJECTS:
-1. MultiVendor E-Commerce - Next.js, Stripe, Razorpay, PostgreSQL
-2. Dynamic Template Builder - React, drag-and-drop, JSON-driven
-3. Large Dataset Analytics Dashboard - React Query, WebSocket, 100K+ records
-4. AI Content Generator - OpenAI API, Next.js
-
-EXPERIENCE:
-- Company: Webskitters Technology Solutions
-- Role: JavaScript Developer (2022 - Present)
-- Built 10+ production applications
-- Improved performance by 40%
-
-EDUCATION:
-- MCA from Burdwan University (2021)
-
-HOBBIES: Chess, Cricket, AI/ML, YouTube
-
-For any questions not related to Satya or his portfolio, politely redirect the conversation back to what you can help with. Keep responses short (2-4 sentences). Be enthusiastic about Satya's skills.`;
+Be concise, friendly, and helpful. Redirect off-topic questions.`;
 
 export default portfolioData;

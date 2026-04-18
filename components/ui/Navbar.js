@@ -1,18 +1,21 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Education', href: '/education' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -33,7 +36,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="group flex items-center gap-2">
+        <Link href="/" className="group flex items-center gap-2">
           <div className="relative w-9 h-9">
             <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-neon-cyan to-neon-violet opacity-80 group-hover:opacity-100 transition-opacity" />
             <span className="absolute inset-0 flex items-center justify-center font-display font-bold text-void text-sm">
@@ -46,20 +49,23 @@ export default function Navbar() {
           >
             Satya<span className="text-white opacity-60">Prakash</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative group font-body text-sm text-slate-400 hover:text-white transition-colors duration-300"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-neon-cyan to-neon-violet group-hover:w-full transition-all duration-300" />
-            </a>
-          ))}
+        <div className="hidden lg:flex items-center gap-6">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative group font-body text-sm transition-colors duration-300 ${isActive ? 'text-neon-cyan' : 'text-slate-400 hover:text-white'}`}
+              >
+                {link.label}
+                <span className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-neon-cyan to-neon-violet transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA */}
@@ -75,19 +81,19 @@ export default function Navbar() {
           >
             Resume ↓
           </a>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="px-4 py-2 rounded-lg text-sm font-body font-medium text-void transition-all duration-300 hover:shadow-lg"
             style={{ background: 'var(--color-neon-cyan)', boxShadow: '0 0 20px rgba(0,245,255,0.3)' }}
           >
             Hire Me
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map((i) => (
@@ -116,26 +122,30 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-white/5"
+            className="lg:hidden glass border-t border-white/5"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-slate-300 hover:text-neon-cyan font-body transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                className="mt-2 px-4 py-2 rounded-lg text-sm text-center font-body font-medium text-void"
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`font-body transition-colors ${isActive ? 'text-neon-cyan' : 'text-slate-300 hover:text-white'}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <Link
+                href="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 px-4 py-3 rounded-lg text-sm text-center font-body font-medium text-void"
                 style={{ background: 'var(--color-neon-cyan)' }}
               >
                 Hire Me
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

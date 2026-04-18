@@ -59,21 +59,21 @@ export default function Education() {
               <div className="mb-1">
                 <span
                   className="font-mono text-xs tracking-wider"
-                  style={{ color: i === 0 ? 'var(--color-neon-cyan)' : 'var(--color-neon-pink)' }}
+                  style={{ color: i % 2 === 0 ? 'var(--color-neon-cyan)' : 'var(--color-neon-pink)' }}
                 >
-                  {edu.year}
+                  {edu.duration || edu.year}
                 </span>
               </div>
 
               <h3 className="font-display font-bold text-xl text-white mb-2">
                 {edu.degree}
               </h3>
-              <p className="font-body text-slate-400 mb-1">{edu.institution}</p>
-              <p className="font-body text-sm text-slate-500 mb-4">
-                {edu.university} • {edu.location}
-              </p>
+              <p className="font-body text-slate-400 mb-1">{edu.college || edu.school}</p>
+              {edu.university && (
+                <p className="font-body text-sm text-slate-500 mb-4">{edu.university}</p>
+              )}
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-4">
                 <span
                   className="px-3 py-1 rounded-full font-mono text-xs"
                   style={{
@@ -82,7 +82,7 @@ export default function Education() {
                     color: '#f0b429',
                   }}
                 >
-                  ⭐ {edu.grade}
+                  ⭐ {edu.percentage || `Honours: ${edu.honours} | Agg: ${edu.aggregate}`}
                 </span>
               </div>
 

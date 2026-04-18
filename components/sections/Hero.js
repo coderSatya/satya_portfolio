@@ -2,6 +2,10 @@
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import Link from 'next/link';
+import { portfolioData } from '@/utils/data';
+
+const { personal } = portfolioData;
 
 // Lazy load 3D background
 const HeroBackground = dynamic(() => import('@/components/three/HeroBackground'), {
@@ -54,13 +58,31 @@ export default function Hero() {
           </span>
         </motion.div>
 
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full p-1"
+          style={{ background: 'linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-violet))' }}
+        >
+          <div className="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-br from-neon-cyan to-neon-violet blur-md opacity-50" />
+          <div className="relative w-full h-full rounded-full overflow-hidden bg-void border-2 border-void">
+            <img 
+              src="https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?q=80&w=2671&auto=format&fit=crop" 
+              alt="Satya Prakash Profile" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="font-display font-extrabold leading-none tracking-tight mb-6"
-          style={{ fontSize: 'clamp(3.5rem, 10vw, 8rem)' }}
+          style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}
         >
           <span className="block text-white">SATYA</span>
           <span className="block gradient-text">PRAKASH</span>
@@ -78,17 +100,15 @@ export default function Hero() {
           </span>
           <TypeAnimation
             sequence={[
-              'Frontend Engineer',
+              'Software Engineer',
               1500,
-              'React.js Specialist',
-              1500,
-              'Next.js Developer',
+              'Frontend Developer',
               1500,
               'AI Enthusiast',
               1500,
-              'Problem Solver',
+              'React.js Expert',
               1500,
-              'UI/UX Craftsman',
+              'Next.js Specialist',
               1500,
             ]}
             wrapper="span"
@@ -107,8 +127,8 @@ export default function Hero() {
           className="max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed mb-12 font-body"
         >
           Building <span className="text-white font-medium">high-performance</span> web experiences 
-          with modern frontend technologies. 2.5+ years crafting 
-          <span className="text-white font-medium"> scalable</span> applications at Webskitters, Kolkata.
+          with modern frontend technologies. {personal.experience} crafting 
+          <span className="text-white font-medium"> scalable</span> applications at Indus Net Technologies.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -118,8 +138,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <a
-            href="#projects"
+          <Link
+            href="/projects"
             className="group btn-shimmer relative px-8 py-4 rounded-xl font-body font-semibold text-void transition-all duration-300 hover:scale-105"
             style={{
               background: 'linear-gradient(135deg, var(--color-neon-cyan), #00d4e6)',
@@ -138,10 +158,10 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
-          </a>
+          </Link>
 
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="group btn-shimmer px-8 py-4 rounded-xl font-body font-semibold text-white border transition-all duration-300 hover:scale-105"
             style={{
               borderColor: 'rgba(255,255,255,0.15)',
@@ -150,7 +170,7 @@ export default function Hero() {
             }}
           >
             Contact Me
-          </a>
+          </Link>
 
           <a
             href="/resume.pdf"

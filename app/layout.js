@@ -1,4 +1,5 @@
 import { Toaster } from 'react-hot-toast';
+import GlobalLayout from '@/components/ui/GlobalLayout';
 import '../styles/globals.css';
 
 export const metadata = {
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        {children}
+        <GlobalLayout>
+          {children}
+        </GlobalLayout>
         <Toaster
           position="bottom-right"
           toastOptions={{

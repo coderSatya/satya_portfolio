@@ -76,54 +76,26 @@ export default function Experience() {
                       <p className="font-body text-neon-cyan font-medium">{job.company}</p>
                     </div>
                     <div className="text-right">
-                      <span
-                        className="inline-block px-3 py-1 rounded-full font-mono text-xs mb-1"
-                        style={{
-                          background: 'rgba(0,245,255,0.1)',
-                          border: '1px solid rgba(0,245,255,0.2)',
-                          color: 'var(--color-neon-cyan)',
-                        }}
-                      >
-                        {job.type}
-                      </span>
-                      <p className="font-mono text-xs text-slate-500 mt-1">{job.period}</p>
+                      <p className="font-mono text-xs text-slate-500 mt-1">{job.duration}</p>
                     </div>
                   </div>
 
-                  <p className="text-slate-400 mb-2 flex items-center gap-2 font-mono text-xs">
+                  <p className="text-slate-400 mb-6 flex items-center gap-2 font-mono text-xs">
                     <span>📍</span> {job.location}
                   </p>
 
-                  <p className="font-body text-slate-400 mb-6 leading-relaxed">
-                    {job.description}
-                  </p>
-
-                  {/* Responsibilities */}
-                  <ul className="space-y-2 mb-6">
-                    {job.responsibilities.map((resp, i) => (
-                      <li key={i} className="flex items-start gap-3 font-body text-sm text-slate-400">
-                        <span className="mt-1 text-neon-cyan shrink-0">▸</span>
-                        {resp}
+                  {/* Projects / Responsibilities */}
+                  <ul className="space-y-4 mb-2">
+                    {job.projects?.map((proj, i) => (
+                      <li key={i} className="font-body text-sm text-slate-400">
+                        <span className="font-bold text-white mb-1 block">
+                          <span className="text-neon-cyan shrink-0 mr-2">▸</span>
+                          {proj.name}
+                        </span>
+                        <span className="block ml-6 text-slate-500">{proj.description}</span>
                       </li>
                     ))}
                   </ul>
-
-                  {/* Tech stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {job.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2.5 py-1 rounded-lg font-mono text-xs skill-badge"
-                        style={{
-                          background: 'rgba(139,92,246,0.1)',
-                          border: '1px solid rgba(139,92,246,0.2)',
-                          color: 'rgba(139,92,246,0.9)',
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </motion.div>

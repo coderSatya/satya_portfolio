@@ -6,42 +6,24 @@ import { portfolioData } from '@/utils/data';
 
 const { skills } = portfolioData;
 
-function SkillBar({ name, level, color, delay, inView }) {
+function SkillItem({ name, color, delay, inView }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ delay, duration: 0.5 }}
-      className="group"
+      className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl hover:bg-white/10 transition-colors"
     >
-      <div className="flex justify-between items-center mb-2">
-        <span className="font-body text-sm text-slate-300 group-hover:text-white transition-colors">
-          {name}
-        </span>
-        <span className="font-mono text-xs" style={{ color }}>
-          {level}%
-        </span>
-      </div>
-      <div
-        className="h-1.5 w-full rounded-full overflow-hidden"
-        style={{ background: 'rgba(255,255,255,0.06)' }}
-      >
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay: delay + 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full rounded-full"
-          style={{
-            background: `linear-gradient(90deg, ${color}, ${color}aa)`,
-            boxShadow: `0 0 8px ${color}60`,
-          }}
-        />
-      </div>
+      <div className="w-2 h-2 rounded-full shadow-[0_0_8px]" style={{ background: color, shadowColor: color }} />
+      <span className="font-body text-sm text-slate-300 font-medium tracking-wide">
+        {name}
+      </span>
     </motion.div>
   );
 }
 
 function SkillCategory({ title, items, color, icon, delay, inView }) {
+  if (!items) return null;
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -51,21 +33,20 @@ function SkillCategory({ title, items, color, icon, delay, inView }) {
     >
       <div className="flex items-center gap-3 mb-8">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-lg"
+          className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shadow-lg"
           style={{ background: `${color}15`, border: `1px solid ${color}30` }}
         >
           {icon}
         </div>
-        <h3 className="font-display font-bold text-lg text-white">{title}</h3>
+        <h3 className="font-display font-bold text-lg text-white tracking-wide">{title}</h3>
       </div>
-      <div className="space-y-5">
+      <div className="flex flex-wrap gap-3">
         {items.map((skill, i) => (
-          <SkillBar
-            key={skill.name}
-            name={skill.name}
-            level={skill.level}
+          <SkillItem
+            key={skill}
+            name={skill}
             color={color}
-            delay={delay + i * 0.07}
+            delay={delay + i * 0.05}
             inView={inView}
           />
         ))}
@@ -75,24 +56,12 @@ function SkillCategory({ title, items, color, icon, delay, inView }) {
 }
 
 const categories = [
-  {
-    title: 'Frontend',
-    icon: '⚡',
-    color: 'var(--color-neon-cyan)',
-    key: 'frontend',
-  },
-  {
-    title: 'Backend Basics',
-    icon: '🔧',
-    color: 'var(--color-neon-violet)',
-    key: 'backend',
-  },
-  {
-    title: 'Tools & DevOps',
-    icon: '🛠️',
-    color: 'var(--color-neon-pink)',
-    key: 'tools',
-  },
+  { title: 'Frontend Core', icon: '⚡', color: 'var(--color-neon-cyan)', key: 'frontend' },
+  { title: 'UI & Styling', icon: '🎨', color: 'var(--color-neon-pink)', key: 'ui' },
+  { title: 'State & Data', icon: '🧠', color: 'var(--color-neon-violet)', key: 'stateAndData' },
+  { title: 'Performance', icon: '🚀', color: '#00f5ff', key: 'performance' },
+  { title: 'Development Tools', icon: '🛠️', color: '#8b5cf6', key: 'tools' },
+  { title: 'AI Integration', icon: '🤖', color: '#ff2d78', key: 'ai' },
 ];
 
 export default function Skills() {
@@ -116,7 +85,7 @@ export default function Skills() {
           Tech <span className="neon-text-cyan">Arsenal</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-6" ref={ref}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" ref={ref}>
           {categories.map((cat, i) => (
             <SkillCategory
               key={cat.key}
@@ -129,34 +98,6 @@ export default function Skills() {
             />
           ))}
         </div>
-
-        {/* Floating skill badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6 }}
-          className="mt-12 flex flex-wrap justify-center gap-3"
-        >
-          {[
-            'React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS',
-            'Node.js', 'PostgreSQL', 'Git', 'Figma', 'Vercel', 'Docker', 'Prisma',
-          ].map((tech, i) => (
-            <motion.span
-              key={tech}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.7 + i * 0.05, type: 'spring', stiffness: 200 }}
-              className="skill-badge px-4 py-2 rounded-xl font-mono text-sm cursor-default"
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                color: '#94a3b8',
-              }}
-            >
-              {tech}
-            </motion.span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

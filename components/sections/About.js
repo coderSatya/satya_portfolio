@@ -5,7 +5,14 @@ import { useInView } from 'react-intersection-observer';
 import { SectionLabel } from '@/components/ui/UIElements';
 import { portfolioData } from '@/utils/data';
 
-const { personal, stats } = portfolioData;
+const { personal } = portfolioData;
+
+const stats = {
+  experience: { value: 4, label: "Years Experience", suffix: "+" },
+  projects: { value: 10, label: "Major Projects", suffix: "+" },
+  performance: { value: 40, label: "Performance Improved", suffix: "%" },
+  clients: { value: 25, label: "User Engagement Boost", suffix: "%" },
+};
 
 function StatCard({ value, label, suffix, delay, inView }) {
   const numVal = parseFloat(value);
@@ -68,33 +75,15 @@ export default function About() {
             </h2>
 
             <div className="space-y-4 font-body text-slate-400 leading-relaxed text-lg">
-              <p>
-                I'm <span className="text-white font-medium">Satya Prakash</span>, a Frontend
-                Developer from Kolkata, India with{' '}
-                <span className="text-neon-cyan font-medium">2.5+ years</span> of hands-on
-                experience building modern web applications.
-              </p>
-              <p>
-                At{' '}
-                <span className="text-white font-medium">Webskitters Technology Solutions</span>, I
-                lead frontend development for diverse client projects — from e-commerce platforms to
-                data-heavy dashboards. My toolkit centers around{' '}
-                <span className="text-neon-violet font-medium">React.js & Next.js</span>.
-              </p>
-              <p>
-                I'm passionate about{' '}
-                <span className="text-neon-pink font-medium">performance optimization</span>,
-                clean code architecture, and creating interfaces that users love. Currently exploring
-                AI integrations and 3D web experiences.
-              </p>
+              <p>{personal.summary}</p>
             </div>
 
             {/* Quick facts */}
             <div className="mt-8 grid grid-cols-2 gap-3">
               {[
-                { label: 'Location', value: '📍 Kolkata, India' },
-                { label: 'Role', value: '💻 Frontend Developer' },
-                { label: 'Experience', value: '⚡ 2.5+ Years' },
+                { label: 'Location', value: `📍 ${personal.location}` },
+                { label: 'Role', value: `💻 ${personal.role}` },
+                { label: 'Experience', value: `⚡ ${personal.experience}` },
                 { label: 'Status', value: '✅ Open to Work' },
               ].map((item) => (
                 <div
@@ -161,7 +150,7 @@ export default function About() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -bottom-4 -right-4 glass rounded-xl px-3 py-2 glow-border-cyan"
               >
-                <p className="font-mono text-xs text-neon-cyan">2.5+ yrs exp.</p>
+                <p className="font-mono text-xs text-neon-cyan">{personal.experience} exp.</p>
               </motion.div>
             </motion.div>
 

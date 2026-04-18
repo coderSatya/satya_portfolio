@@ -47,15 +47,15 @@ function ProjectCard({ project, index }) {
               <span
                 className="inline-block px-2.5 py-1 rounded-full font-mono text-xs mb-3"
                 style={{
-                  background: `${project.color}15`,
-                  border: `1px solid ${project.color}30`,
-                  color: project.color,
+                  background: `${project.color || '#00f5ff'}15`,
+                  border: `1px solid ${project.color || '#00f5ff'}30`,
+                  color: project.color || '#00f5ff',
                 }}
               >
-                {project.category}
+                {project.category || 'Web Application'}
               </span>
               <h3 className="font-display font-bold text-xl text-white leading-tight">
-                {project.title}
+                {project.name}
               </h3>
             </div>
 
@@ -78,21 +78,21 @@ function ProjectCard({ project, index }) {
                   </svg>
                 </a>
               )}
-              {project.liveUrl && project.liveUrl !== '#' && (
+              {project.url && project.url !== '#' && (
                 <a
-                  href={project.liveUrl}
+                  href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg flex items-center justify-center transition-all hover:scale-110"
                   style={{
-                    background: `${project.color}15`,
-                    border: `1px solid ${project.color}30`,
+                    background: `${project.color || '#00f5ff'}15`,
+                    border: `1px solid ${project.color || '#00f5ff'}30`,
                   }}
                   aria-label="Live Demo"
                 >
                   <svg
                     className="w-4 h-4"
-                    style={{ color: project.color }}
+                    style={{ color: project.color || '#00f5ff' }}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
