@@ -17,12 +17,10 @@ export default function Home() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-32">
+        <div className="max-w-7xl mx-auto px-6">
           <About />
           <Skills />
-          <div className="space-y-24">
-            <Achievements />
-          </div>
+          <Achievements />
         </div>
       </main>
     </>

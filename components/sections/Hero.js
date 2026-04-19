@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Link from 'next/link';
 import { portfolioData } from '@/utils/data';
+import Image from 'next/image';
 
 const { personal } = portfolioData;
 
@@ -41,149 +42,153 @@ export default function Hero() {
       <div className="absolute inset-0 cyber-grid-bg opacity-40" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        {/* Pre-title badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full glass glow-border-cyan"
-        >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ background: 'var(--color-neon-cyan)' }}
-          />
-          <span className="font-mono text-xs tracking-wider" style={{ color: 'var(--color-neon-cyan)' }}>
-            AVAILABLE FOR WORK
-          </span>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full p-1"
-          style={{ background: 'linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-violet))' }}
-        >
-          <div className="absolute inset-0 rounded-full animate-spin-slow bg-gradient-to-br from-neon-cyan to-neon-violet blur-md opacity-50" />
-          <div className="relative w-full h-full rounded-full overflow-hidden bg-void border-2 border-void">
-            <img 
-              src="https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?q=80&w=2671&auto=format&fit=crop" 
-              alt="Satya Prakash Profile" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-
-        {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-extrabold leading-none tracking-tight mb-6"
-          style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}
-        >
-          <span className="block text-white">SATYA</span>
-          <span className="block gradient-text">PRAKASH</span>
-        </motion.h1>
-
-        {/* Typing subtitle */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-10"
-        >
-          <span className="font-mono text-lg md:text-xl text-slate-400">
-            {`// `}
-          </span>
-          <TypeAnimation
-            sequence={[
-              'Software Engineer',
-              1500,
-              'Frontend Developer',
-              1500,
-              'AI Enthusiast',
-              1500,
-              'React.js Expert',
-              1500,
-              'Next.js Specialist',
-              1500,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="font-mono text-lg md:text-xl font-medium"
-            style={{ color: 'var(--color-neon-cyan)' }}
-          />
-        </motion.div>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed mb-12 font-body"
-        >
-          Building <span className="text-white font-medium">high-performance</span> web experiences 
-          with modern frontend technologies. {personal.experience} crafting 
-          <span className="text-white font-medium"> scalable</span> applications at Indus Net Technologies.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          <Link
-            href="/projects"
-            className="group btn-shimmer relative px-8 py-4 rounded-xl font-body font-semibold text-void transition-all duration-300 hover:scale-105"
-            style={{
-              background: 'linear-gradient(135deg, var(--color-neon-cyan), #00d4e6)',
-              boxShadow: '0 0 30px rgba(0,245,255,0.35)',
-            }}
+          {/* Left Column: Details */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-left"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              View Projects
-              <svg
-                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+            {/* Pre-title badge */}
+            {/* <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full glass glow-border-cyan">
+              <span
+                className="w-2 h-2 rounded-full animate-pulse"
+                style={{ background: 'var(--color-neon-cyan)' }}
+              />
+              <span className="font-mono text-[10px] md:text-xs tracking-wider" style={{ color: 'var(--color-neon-cyan)' }}>
+                AVAILABLE FOR WORK
+              </span>
+            </div> */}
+
+            {/* Name */}
+            <h1
+              className="font-display font-extrabold leading-none tracking-tight mb-4"
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
+            >
+              <span className="block text-white">SATYA</span>
+              <span className="block gradient-text">PRAKASH</span>
+            </h1>
+
+            {/* Typing subtitle */}
+            <div className="mb-6 h-8">
+              <span className="font-mono text-base md:text-lg text-slate-400">
+                {`// `}
+              </span>
+              <TypeAnimation
+                sequence={[
+                  'Software Engineer',
+                  1500,
+                  'Full Stack Developer',
+                  1500,
+                  'MERN Stack Expert',
+                  1500,
+                  'AI Enthusiast',
+                  1500,
+                  'Problem Solver',
+                  1500,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="font-mono text-base md:text-lg font-medium"
+                style={{ color: 'var(--color-neon-cyan)' }}
+              />
+            </div>
+
+            {/* Description */}
+            <p className="max-w-xl text-slate-400 text-base md:text-lg leading-relaxed mb-8 font-body">
+              {personal.summary}
+            </p>
+
+            {/* Social/Contact Block */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-400 hover:text-neon-cyan transition-colors group">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon-cyan/50 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                </div>
+                <span className="font-mono text-xs">LinkedIn</span>
+              </a>
+              <a href={personal.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-400 hover:text-neon-violet transition-colors group">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon-violet/50 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" /></svg>
+                </div>
+                <span className="font-mono text-xs">GitHub</span>
+              </a>
+              <div className="flex items-center gap-3 text-slate-400 group">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <svg className="w-4 h-4 text-neon-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </div>
+                <span className="font-mono text-xs">{personal.phone}</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-400 group">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+                  <svg className="w-4 h-4 text-neon-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <span className="font-mono text-xs truncate">{personal.email}</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/projects"
+                className="group relative px-8 py-4 rounded-xl font-body font-semibold text-void transition-all duration-300 hover:scale-105 active:scale-95"
+                style={{
+                  background: 'linear-gradient(135deg, var(--color-neon-cyan), #00d4e6)',
+                  boxShadow: '0 0 20px rgba(0,245,255,0.2)',
+                }}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-          </Link>
+                <span className="relative z-10 flex items-center gap-2">
+                  View Projects
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </span>
+              </Link>
 
-          <Link
-            href="/contact"
-            className="group btn-shimmer px-8 py-4 rounded-xl font-body font-semibold text-white border transition-all duration-300 hover:scale-105"
-            style={{
-              borderColor: 'rgba(255,255,255,0.15)',
-              background: 'rgba(255,255,255,0.04)',
-              backdropFilter: 'blur(10px)',
-            }}
-          >
-            Contact Me
-          </Link>
+              <Link
+                href="/contact"
+                className="group px-8 py-4 rounded-xl font-body font-semibold text-white border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-white/20 active:scale-95 text-center"
+              >
+                Contact Me
+              </Link>
+            </div>
+          </motion.div>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="group btn-shimmer px-8 py-4 rounded-xl font-body font-semibold transition-all duration-300 hover:scale-105"
-            style={{ color: 'var(--color-neon-violet)', borderColor: 'rgba(139,92,246,0.3)', background: 'rgba(139,92,246,0.06)', border: '1px solid' }}
+          {/* Right Column: Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative flex justify-center lg:justify-end"
           >
-            <span className="flex items-center gap-2">
-              Download CV
-              <span className="text-xs">↓</span>
-            </span>
-          </a>
-        </motion.div>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]">
+              {/* Decorative elements */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neon-cyan/20 to-neon-violet/20 blur-3xl animate-pulse" />
+              <div className="absolute -inset-4 border border-white/5 rounded-full animate-spin-slow pointer-events-none" />
+
+              <div className="relative w-full h-full rounded-2xl md:rounded-[40px] overflow-hidden border border-white/10 shadow-2xl glass p-3">
+                <div className="w-full h-full rounded-xl md:rounded-[30px] overflow-hidden">
+                  <Image
+                    src="/images/Satya Prakash Image.jpeg"
+                    alt="Satya Prakash Profile"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
+                    width={450}
+                    height={450}
+                  />
+                </div>
+              </div>
+
+              {/* Float Experience badge */}
+              <div className="absolute -bottom-6 -left-6 md:bottom-10 md:-left-10 glass rounded-2xl p-4 border border-white/10 shadow-xl hidden md:block">
+                <div className="text-neon-cyan font-display font-bold text-3xl mb-0.5">{personal.experience}</div>
+                <div className="text-slate-500 font-mono text-[10px] uppercase tracking-widest">Experience</div>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
 
         {/* Tech stack pills */}
         <motion.div

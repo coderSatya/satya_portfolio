@@ -11,7 +11,7 @@ export function Achievements() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="achievements" className="py-24 relative" ref={ref}>
+    <section id="achievements" className="py-12 md:py-16 lg:py-20 relative" ref={ref}>
       <div
         className="absolute inset-0 cyber-grid-bg opacity-20 pointer-events-none"
       />
@@ -21,7 +21,7 @@ export function Achievements() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-16"
+          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-10"
         >
           Impact & <span className="gradient-text-gold">Results</span>
         </motion.h2>

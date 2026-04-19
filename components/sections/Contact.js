@@ -110,7 +110,7 @@ export default function Contact() {
   `;
 
   return (
-    <section id="contact" className="py-32 relative" ref={ref}>
+    <section id="contact" className="py-12 md:py-16 lg:py-20 relative" ref={ref}>
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-10 blur-3xl pointer-events-none"
         style={{ background: 'radial-gradient(circle, var(--color-neon-cyan), var(--color-neon-violet))' }}
@@ -119,7 +119,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-6">
         <SectionLabel number={8} label="Contact" />
 
-        <div className="grid lg:grid-cols-2 gap-16 mt-12">
+        <div className="grid lg:grid-cols-2 gap-12 mt-12">
           {/* Left - Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

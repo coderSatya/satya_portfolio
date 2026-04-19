@@ -3,14 +3,14 @@ import GlobalLayout from '@/components/ui/GlobalLayout';
 import '../styles/globals.css';
 
 export const metadata = {
-  title: 'Satya Prakash | Frontend Developer',
+  title: 'Satya Prakash | Software Engineer',
   description:
-    'Portfolio of Satya Prakash — Frontend Developer specializing in React.js, Next.js, and modern web technologies. 2.5+ years building premium web experiences.',
-  keywords: 'Frontend Developer, React.js, Next.js, JavaScript, TypeScript, Tailwind CSS, Kolkata',
+    'Portfolio of Satya Prakash — Software Engineer & Full Stack Developer specializing in MERN stack, React.js, and AI-integrated systems.',
+  keywords: 'Software Engineer, Full Stack Developer, MERN Stack, React.js, Next.js, Node.js, Kolkata',
   authors: [{ name: 'Satya Prakash' }],
   openGraph: {
-    title: 'Satya Prakash | Frontend Developer',
-    description: 'Premium portfolio of Satya Prakash — Frontend Engineer & AI Enthusiast',
+    title: 'Satya Prakash | Software Engineer',
+    description: 'Premium portfolio of Satya Prakash — Full Stack Engineer & AI Enthusiast',
     type: 'website',
   },
 };
@@ -22,7 +22,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

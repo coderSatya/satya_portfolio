@@ -3,7 +3,7 @@
 export const portfolioData = {
   personal: {
     name: "Satya Prakash",
-    role: "AI-Integrated Frontend Developer",
+    role: "Software Engineer | Full Stack Developer",
     experience: "4+ Years",
     location: "Kolkata, India",
     phone: "+91-8506056814",
@@ -12,7 +12,7 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/satya-prakash-sp",
     tagline: "Building Scalable Web Apps with React, Next.js & AI",
     summary:
-      "Frontend Developer with 4+ years of experience building scalable, SEO-optimized, high-performance web applications using React.js and Next.js. Improved page load speed by 40% and user engagement by 25%. Strong in SSR, SSG, APIs, and AI-assisted development.",
+      "Software Engineer with 4+ years of experience building scalable, high-performance MERN stack applications using React.js and Next.js. Improved page load speed by 40% and user engagement by 25%. Expert in full-stack architecture, SSR, SSG, and AI-assisted development.",
   },
 
   skills: {
@@ -170,42 +170,93 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "bengal-tourism",
       name: "Bengal – Soulfully Yours",
       url: "https://soulfulbengal.com/",
-      tech: ["Next.js", "Drupal", "SSR"],
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Drupal CMS"],
+      category: "Full Stack / AI",
       description:
-        "Tourism platform with SEO optimization and AI-driven content modules.",
+        "A premium tourism platform featuring built-from-scratch Next.js architecture with optimized SSR/SSG. It includes a custom AI discovery engine that suggests destinations based on user categories, improving performance by over 40% and significantly boosting SEO rankings.",
+      color: "#ff2d78",
     },
     {
+      id: "lupin-diagnostics",
       name: "Lupin Diagnostics",
       url: "https://www.lupindiagnostics.com/",
-      tech: ["React", "GraphQL"],
+      tech: ["React.js", "Node.js", "GraphQL", "Strapi CMS"],
+      category: "Healthcare",
       description:
-        "Medical booking system with filtering, scheduling, and API integration.",
+        "An enterprise-scale diagnostic platform serving 600+ centers. Engineered the complete test booking cycle with real-time LIMS integration, dynamic GraphQL querying, and a custom healthcare package system delivered via a Strapi-powered CMS.",
+      color: "#00f5ff",
     },
     {
+      id: "nurse-report",
       name: "Nurse Report",
       url: "https://nurse.report/",
-      tech: ["React", "Redux", "React Query"],
+      tech: ["React.js", "Redux", "React Query", "High Performance"],
+      category: "Healthcare Recruiting",
       description:
-        "Healthcare hiring platform with 8000+ hospital data and dashboards.",
+        "A heavy-duty healthcare hiring platform managing data for over 8000 hospitals. I implemented advanced real-time filtering, high-speed data dashboards, and optimized API layers for seamless recruiter experiences.",
+      color: "#38bdf8",
     },
     {
+      id: "american-murder-song",
       name: "American Murder Song",
-      tech: ["Next.js", "PayPal"],
+      url: "https://americanmurdersong.com/",
+      tech: ["Next.js", "PayPal", "E-commerce"],
+      category: "E-commerce",
       description:
-        "E-commerce platform with payment integration and optimized performance.",
+        "A custom-tailored e-commerce experience featuring complex server-side rendering, seamless PayPal integration, and a unique visual theme. Improved page performance by 40% while maintaining high design fidelity.",
+      color: "#e11d48",
+    },
+    {
+      id: "jkyog",
+      name: "JKYOG",
+      url: "https://www.jkyog.org/",
+      tech: ["Next.js", "Drupal", "Performance"],
+      category: "Content Platform",
+      description:
+        "A global content-driven platform migrated from legacy systems to a high-speed Next.js architecture. Focused on core web vitals optimization, global accessibility, and headless CMS synchronization to deliver a smooth user experience.",
+      color: "#8b5cf6",
+    },
+    {
+      id: "besimplified",
+      name: "BeSimplified",
+      url: "https://www.besimplified.com/",
+      tech: ["React.js", "Modern UI", "Web Experience"],
+      category: "Modern Web App",
+      description:
+        "A clean, minimalist web experience designed with modern frontend principles. Focused on reducing bloat, implementing smooth micro-interactions, and building a custom design system for consistent brand identity across all touchpoints.",
+      color: "#f59e0b",
+    },
+  ],
+
+  certifications: [
+    {
+      title: "React - The Complete Guide 2024",
+      platform: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-81d7cf41-bd3c-4ee2-a954-277b486284ec/",
+    },
+    {
+      title: "The Complete JavaScript Course 2024: From Zero to Expert!",
+      platform: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-9cd475ed-d19f-4cac-891a-e1e56f9a6598/",
+    },
+    {
+      title: "Next.js 14 & 15 - The Complete Guide",
+      platform: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-dedfedaa-921c-4d68-bf82-1e4decd07a2a/",
     },
   ],
 };
 
 export const chatbotSystemPrompt = `You are Satya's personal AI assistant on his developer portfolio. Answer questions about Satya based on this context:
 NAME: Satya Prakash
-ROLE: AI-Integrated Frontend Developer
+ROLE: Software Engineer | Full Stack Developer
 PHONE: +91-8506056814
 EMAIL: sprakash6233@gmail.com
 EXPERIENCE: 4+ Years (Indus Net, Webskitters, Jai Infoway, CodeClouds)
-SKILLS: React.js, Next.js, Redux, Zustand, Tailwind CSS, GraphQL, SSR, AI (ChatGPT, Copilot).
+SKILLS: MERN Stack, React.js, Next.js, Node.js, Express, MongoDB, Redux, Zustand, Tailwind CSS, GraphQL, SSR, AI (ChatGPT, Copilot).
 EDUCATION: MCA, B.Sc. IT
 PROJECTS: Bengal Tourism, Lupin Diagnostics, Nurse Report, American Murder Song.
 

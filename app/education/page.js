@@ -1,14 +1,22 @@
 import Education from '@/components/sections/Education';
+import Certifications from '@/components/sections/Certifications';
 
 export const metadata = {
-  title: 'Education | Satya Prakash',
-  description: 'Academic background of Satya Prakash.',
+  title: 'Education & Certifications | Satya Prakash',
+  description: 'Academic background and professional certifications of Satya Prakash.',
 };
 
 export default function EducationPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <main className="relative bg-void">
       <Education />
-    </div>
+      
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      </div>
+
+      <Certifications />
+    </main>
   );
 }

@@ -10,7 +10,7 @@ export default function Experience() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="experience" className="py-32 relative" ref={ref}>
+    <section id="experience" className="py-12 md:py-16 lg:py-20 relative" ref={ref}>
       <div
         className="absolute top-0 right-1/4 w-80 h-80 rounded-full opacity-5 blur-3xl pointer-events-none"
         style={{ background: 'var(--color-neon-cyan)' }}
@@ -22,7 +22,7 @@ export default function Experience() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-16"
+          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-10"
         >
           Work <span className="neon-text-violet">History</span>
         </motion.h2>

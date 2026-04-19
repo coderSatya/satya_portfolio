@@ -68,7 +68,7 @@ export default function Skills() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="skills" className="py-32 relative" ref={ref}>
+    <section id="skills" className="py-12 md:py-16 lg:py-20 relative" ref={ref}>
       <div
         className="absolute top-1/2 left-0 w-80 h-80 rounded-full opacity-5 blur-3xl pointer-events-none"
         style={{ background: 'var(--color-neon-cyan)' }}
@@ -80,7 +80,7 @@ export default function Skills() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-16"
+          className="font-display font-extrabold text-4xl md:text-5xl mt-4 mb-10"
         >
           Tech <span className="neon-text-cyan">Arsenal</span>
         </motion.h2>
