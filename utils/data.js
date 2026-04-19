@@ -109,62 +109,63 @@ export const portfolioData = {
       role: "Software Engineer",
       duration: "Jul 2025 – Present",
       location: "Kolkata",
-      projects: [
-        {
-          name: "Bengal – Soulfully Yours",
-          description:
-            "Built SEO-optimized tourism pages using Next.js, Drupal CMS, and SSR/SSG. Developed AI-driven tourism modules with dynamic routing.",
-        },
-        {
-          name: "Lupin Diagnostics",
-          description:
-            "Developed a full medical booking system with filtering, scheduling, and GraphQL APIs for efficient data handling.",
-        },
+      impact: "Leading high-performance frontend initiatives using Next.js and AI-integrated workflows.",
+      highlights: [
+        "Improved website performance by 40% using advanced SSR and optimization techniques.",
+        "Built scalable architecture using Next.js and GraphQL for enterprise-level diagnostic systems.",
+        "Optimized API handling and reduced initial load time by 30% through effective code splitting.",
+        "Collaborated with cross-functional teams to ensure seamless data flow and high design fidelity."
       ],
+      techStack: ["Next.js", "TypeScript", "Tailwind", "GraphQL", "Strapi"],
+      scale: "Serving 600+ centers across India",
+      logo: "/images/int-logo.png"
     },
     {
       company: "Webskitters Technology Solutions",
       role: "JavaScript Developer (ReactJS)",
       duration: "Sep 2023 – Jul 2025",
       location: "Kolkata",
-      projects: [
-        {
-          name: "American Murder Song",
-          description:
-            "E-commerce platform with PayPal integration, SSR optimization, and improved performance by 40%.",
-        },
-        {
-          name: "Nurse Report",
-          description:
-            "Healthcare hiring platform with 8000+ hospital data, advanced filtering, dashboards, and charts.",
-        },
+      impact: "Developed complex healthcare and e-commerce ecosystems with high data scale and performance needs.",
+      highlights: [
+        "Built a high-speed healthcare hiring platform handling 8000+ hospital data points.",
+        "Implemented real-time analytics and dynamic data visualization dashboards.",
+        "Significantly improved UI responsiveness and core web vitals across legacy projects.",
+        "Developed a library of reusable UI components that reduced development time by 20%."
       ],
+      techStack: ["React.js", "Redux", "React Query", "PayPal", "High Performance"],
+      scale: "Trusted by 8000+ medical institutions",
+      logo: "/images/webskitters-logo.png"
     },
     {
       company: "Jai Infoway Pvt. Ltd.",
       role: "Software Engineer",
       duration: "Apr 2023 – Sep 2023",
       location: "Ranchi",
-      projects: [
-        {
-          name: "JKYOG Website Migration",
-          description:
-            "Migrated Drupal website to Next.js with SSR, improving performance and SEO.",
-        },
+      impact: "Focused on global platform migrations and SEO performance optimization.",
+      highlights: [
+        "Migrated complex legacy Drupal systems to modern Next.js architectures.",
+        "Improved global SEO visibility and rankings through structured data and metadata optimization.",
+        "Enhanced page load speeds significantly using edge caching and SSR.",
+        "Balanced UI/UX improvements with performance and maintainability."
       ],
+      techStack: ["Next.js", "Drupal", "SEO Optimization", "SSR"],
+      scale: "International Content Platform Delivery",
+      logo: "/images/jai-logo.png"
     },
     {
       company: "CodeClouds IT Solutions",
       role: "Frontend Developer",
       duration: "Dec 2022 – Apr 2023",
       location: "Kolkata",
-      projects: [
-        {
-          name: "CADS Reports & PYPA HR",
-          description:
-            "Built reusable UI components and integrated APIs for analytics and HR platforms.",
-        },
+      impact: "Delivered enterprise-grade UI components and integrated complex backend APIs.",
+      highlights: [
+        "Built reusable UI component libraries for enterprise analytics and HR management platforms.",
+        "Integrated complex RESTful APIs for real-time data handling in HR portals.",
+        "Focused on creating accessible and high-fidelity frontends from Figma designs."
       ],
+      techStack: ["React.js", "UI Kit Development", "API Integration"],
+      scale: "Enterprise HR & Analytics Solutions",
+      logo: "/images/codeclouds-logo.png"
     },
   ],
 
@@ -248,6 +249,48 @@ export const portfolioData = {
       url: "https://www.udemy.com/certificate/UC-dedfedaa-921c-4d68-bf82-1e4decd07a2a/",
     },
   ],
+
+  cricketAchievement: {
+    title: "Cricket Achievement 🏏",
+    highlight: "Life Science Legends – Champions (INT. Cricket League 2026)",
+    performanceSummary: "66* runs off 26 balls (7 sixes, 5 fours)",
+    award: "Man of the Match",
+    venue: "NKDA Cricket Stadium, Kolkata",
+    stats: [
+      { label: "Runs", value: "66*" },
+      { label: "Balls", value: "26" },
+      { label: "Sixes", value: "7" },
+      { label: "Fours", value: "5" },
+    ],
+    gallery: [
+      { url: "/images/cric1.jpeg", caption: "Lifting the Trophy" },
+      { url: "/images/cric2.jpeg", caption: "Batting in Style" },
+    ],
+    videoUrl: "https://www.youtube.com/embed/G7jwCMr6JHM", // Fixed for iframe embed
+  },
+
+  ebookPromo: {
+    title: "Frontend Interview Mastery 📘",
+    subtitle: "Most frontend developers fail interviews not because they don’t know React — but because they lack clarity.",
+    problem: [
+      "Random DSA questions that never get asked",
+      "Stuck in a loop of endless tutorials",
+      "Lack of clarity on output-based questions",
+      "No idea what high-tier interviewers actually look for",
+    ],
+    solution: "A structured, battle-tested ebook built on real interview patterns from top tech companies.",
+    features: [
+      "Most frequently asked technical questions",
+      "Frontend-optimized DSA patterns",
+      "Coding & output-based challenges",
+      "Deep dives into JS, React, and Next.js",
+      "Comprehensive interview roadmaps",
+      "Curated learning resources",
+      "Leveraging AI tools in development",
+    ],
+    cta: "Download Ebook",
+    downloadUrl: "https://superprofile.bio/satyaprakash15/SNnfThwgAC",
+  },
 };
 
 export const chatbotSystemPrompt = `You are Satya's personal AI assistant on his developer portfolio. Answer questions about Satya based on this context:

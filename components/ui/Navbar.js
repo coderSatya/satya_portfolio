@@ -71,7 +71,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="/resume.pdf"
+            href="/pdf/Satya_Prakash_Resume.pdf"
             download
             className="btn-shimmer px-4 py-2 rounded-lg border text-sm font-body font-medium transition-all duration-300"
             style={{

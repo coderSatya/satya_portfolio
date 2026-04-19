@@ -1,5 +1,7 @@
 import Education from '@/components/sections/Education';
 import Certifications from '@/components/sections/Certifications';
+import CricketAchievement from '@/components/sections/CricketAchievement';
+import EbookPromo from '@/components/sections/EbookPromo';
 
 export const metadata = {
   title: 'Education & Certifications | Satya Prakash',
@@ -8,7 +10,7 @@ export const metadata = {
 
 export default function EducationPage() {
   return (
-    <main className="relative bg-void">
+    <main className="relative bg-void min-h-screen">
       <Education />
       
       {/* Divider */}
@@ -17,6 +19,20 @@ export default function EducationPage() {
       </div>
 
       <Certifications />
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      </div>
+
+      <CricketAchievement />
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      </div>
+
+      <EbookPromo />
     </main>
   );
 }

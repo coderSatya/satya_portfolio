@@ -17,7 +17,7 @@ export default function Education() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="education" className="py-12 md:py-16 lg:py-20 relative overflow-hidden" ref={ref}>
+    <section id="education" className="pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 relative overflow-hidden" ref={ref}>
       {/* 3D Visual Background */}
       <EducationVisual />
 

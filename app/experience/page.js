@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function ExperiencePage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <main className="min-h-screen">
       <Experience />
-    </div>
+    </main>
   );
 }
