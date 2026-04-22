@@ -10,6 +10,7 @@ export const portfolioData = {
     email: "sprakash6233@gmail.com",
     github: "https://github.com/coderSatya",
     linkedin: "https://linkedin.com/in/satya-prakash-sp",
+    instagram: "https://www.instagram.com/satya.prakash0715",
     tagline: "Building Scalable Web Apps with React, Next.js & AI",
     summary:
       "Software Engineer with 4+ years of experience building scalable, high-performance MERN stack applications using React.js and Next.js. Improved page load speed by 40% and user engagement by 25%. Expert in full-stack architecture, SSR, SSG, and AI-assisted development.",
@@ -171,6 +172,18 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "dev-tinder",
+      name: "Dev Tinder – Developer Matching Platform",
+      url: "http://13.201.88.146/",
+      githubUrl: "https://github.com/coderSatya", // Placeholder
+      tech: ["Next.js", "Node.js", "Express.js", "AWS EC2", "MongoDB"],
+      category: "Full Stack / Cloud",
+      isFeatured: true,
+      description:
+        "A premium developer matching platform inspired by Tinder. Built with a heavy-duty MERN stack and deployed on AWS Cloud (EC2 t3.micro). Features a swipe-based discovery system, secure user authentication, and a real-time interaction architecture designed for global scalability.",
+      color: "#10b981", // Emerald highlight for full stack prowess
+    },
+    {
       id: "bengal-tourism",
       name: "Bengal – Soulfully Yours",
       url: "https://soulfulbengal.com/",
@@ -233,6 +246,12 @@ export const portfolioData = {
   ],
 
   certifications: [
+    {
+      title: "Namaste Node.js",
+      platform: "Akshay Saini",
+      url: "https://namastedev.com/sprakash6233/certificates/namaste-node",
+      image: "/images/node.jpeg",
+    },
     {
       title: "React - The Complete Guide 2024",
       platform: "Udemy",

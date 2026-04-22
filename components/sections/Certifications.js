@@ -34,8 +34,12 @@ export default function Certifications() {
             >
               {/* Icon/Badge */}
               <div className="mb-6">
-                <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                  📜
+                <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-xl group-hover:scale-110 transition-transform overflow-hidden">
+                  {cert.image ? (
+                    <img src={cert.image} alt={cert.title} className="w-full h-full object-cover" />
+                  ) : (
+                    "📜"
+                  )}
                 </div>
               </div>
 
