@@ -13,7 +13,8 @@ export const portfolioData = {
     instagram: "https://www.instagram.com/satya.prakash0715",
     tagline: "Building Scalable Web Apps with React, Next.js & AI",
     summary:
-      "Software Engineer with 4+ years of experience building scalable, high-performance MERN stack applications using React.js and Next.js. Improved page load speed by 40% and user engagement by 25%. Expert in full-stack architecture, SSR, SSG, and AI-assisted development.",
+      "Software Engineer with 4+ years of experience, specialized in AI-integrated MERN stack systems. I have delivered scalable applications across Tourism, E-commerce, Healthcare, and Trading domains, with hands-on experience in independently managing projects and directly collaborating with clients—focused on performance, simplicity, and real-world impact."
+
   },
 
   skills: {
@@ -23,9 +24,11 @@ export const portfolioData = {
       "TypeScript",
       "JavaScript (ES6+)",
       "HTML5",
-      "CSS3",
+      "PWA",
+      "Web Vitals"
     ],
     ui: [
+      "CSS3",
       "Tailwind CSS",
       "Material UI (MUI)",
       "Ant Design",
@@ -34,20 +37,21 @@ export const portfolioData = {
       "Responsive Design",
     ],
     stateAndData: [
-      "Redux",
+      "Redux & Redux Toolkit",
       "Zustand",
       "TanStack React Query",
       "REST APIs",
       "GraphQL",
+      "RTK Query"
     ],
-    performance: [
-      "SSR",
-      "SSG",
-      "PWA",
-      "Web Vitals",
-      "SEO Optimization",
-      "Code Splitting",
-      "Lazy Loading",
+    backendAndDevOps: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PM2",
+      "Docker",
+      "Redis",
+      "AWS",
     ],
     tools: [
       "Git",
@@ -56,22 +60,28 @@ export const portfolioData = {
       "Bitbucket",
       "Postman",
       "VS Code",
+      "Cursor AI",
     ],
     ai: [
       "ChatGPT",
       "Claude",
-      "GitHub Copilot",
       "Cursor AI",
       "n8n",
       "Prompt Engineering",
+      "GitHub Copilot",
+      "Antigravity"
     ],
   },
 
   achievements: [
-    "Improved page load speed by 40%",
-    "Increased user engagement by 25%",
-    "Handled large datasets (8000+ records)",
-    "Delivered multiple production-level applications",
+    "Improved page load speed by up to 40% through performance optimization",
+    "Increased user engagement by 25% with better UI/UX and responsiveness",
+    "Handled and optimized large datasets (8000+ records) efficiently",
+    "Delivered multiple production-ready applications across domains",
+    "Accelerated project delivery by leveraging AI-assisted development (Antigravity, Claude)",
+    "Independently managed end-to-end project development from planning to deployment",
+    "Collaborated directly with clients to deliver solutions aligned with business needs",
+    "Optimized API performance and reduced load time for better scalability",
   ],
 
   education: [
@@ -273,7 +283,7 @@ export const portfolioData = {
     title: "Cricket Achievement 🏏",
     highlight: "Life Science Legends – Champions (INT. Cricket League 2026)",
     performanceSummary: "66* runs off 26 balls (7 sixes, 5 fours)",
-    award: "Man of the Match",
+    award: "Man of the Match, Final",
     venue: "NKDA Cricket Stadium, Kolkata",
     stats: [
       { label: "Runs", value: "66*" },
@@ -289,7 +299,7 @@ export const portfolioData = {
   },
 
   ebookPromo: {
-    title: "Frontend Interview Mastery 📘",
+    title: "Frontend Interview Mastery",
     subtitle: "Most frontend developers fail interviews not because they don’t know React — but because they lack clarity.",
     problem: [
       "Random DSA questions that never get asked",

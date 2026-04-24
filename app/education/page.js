@@ -12,7 +12,7 @@ export default function EducationPage() {
   return (
     <main className="relative bg-void min-h-screen">
       <Education />
-      
+
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -25,14 +25,15 @@ export default function EducationPage() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       </div>
 
-      <CricketAchievement />
+      <EbookPromo />
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       </div>
 
-      <EbookPromo />
+
+      <CricketAchievement />
     </main>
   );
 }

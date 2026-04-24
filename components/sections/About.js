@@ -36,16 +36,58 @@ export default function About() {
               Crafting <span className="neon-text-cyan">Digital</span> <span className="neon-text-violet">Success</span>
             </h2>
 
-            <div className="space-y-6 font-body text-slate-400 leading-relaxed text-lg md:text-xl">
-              <p>
-                {personal.summary}
-              </p>
-              <p>
-                As a software engineer with over <span className="text-white font-medium">{personal.experience}</span> of hands-on experience, I specialize in building complex, high-performance web systems. My expertise lies in <span className="text-neon-cyan font-medium">React.js, Next.js, and TypeScript</span>, with a deep focus on architectural scalability and performance optimization.
-              </p>
-              <p>
-                I thrive at the intersection of <span className="text-neon-violet font-medium">clean code and intelligent design</span>. Whether it's optimizing page metrics by 40% or integrating advanced AI workflows into modern interfaces, I am dedicated to delivering products that are not just functional, but exceptional.
-              </p>
+            <div className="space-y-6 font-body text-slate-400 leading-relaxed text-lg md:text-xl max-w-3xl">
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                I started my journey as a frontend enthusiast and evolved into a <span className="text-white font-bold tracking-tight">Full-Stack Software Engineer</span>. I specialize in building scalable, high-performance systems using the <span className="text-neon-cyan font-bold">MERN Stack</span>.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                My core expertise lies in <span className="text-white font-bold underline decoration-neon-cyan/30 underline-offset-4">React, Next.js, and TypeScript</span>. On the backend, I leverage <span className="text-white font-bold">Node.js, Express, and MongoDB</span>, coupled with robust <span className="text-white font-bold italic">AWS Deployment</span> strategies.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                With <span className="text-white font-bold font-mono">4+ years of expertise</span>, I have delivered solutions across <span className="text-white font-bold underline decoration-neon-violet/30 underline-offset-4">real-world domains</span> including E-commerce, Healthcare, Tourism, and Trading, managing projects independently from initial concept to successful client delivery.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                In today's fast-paced landscape, I actively champion <span className="text-neon-violet font-bold">AI-integrated development</span>. By leveraging modern AI tools and automated workflows, I build faster, smarter, and more efficient applications that solve complex problems.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="pt-4"
+              >
+                <p className="text-slate-300 font-medium mb-4 italic">
+                  "Explore my portfolio to see my skils, projects, and experience."
+                </p>
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-neon-cyan hover:text-void hover:translate-x-2 transition-all duration-300"
+                >
+                  View Projects
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </motion.div>
             </div>
 
             {/* Quick facts in a clean horizontal layout */}

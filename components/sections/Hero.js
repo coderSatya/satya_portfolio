@@ -174,15 +174,17 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neon-cyan/20 to-neon-violet/20 blur-3xl animate-pulse" />
               <div className="absolute -inset-4 border border-white/5 rounded-full animate-spin-slow pointer-events-none" />
 
-              <div className="relative w-full h-full rounded-2xl md:rounded-[40px] overflow-hidden border border-white/10 shadow-2xl glass p-3">
-                <div className="w-full h-full rounded-xl md:rounded-[30px] overflow-hidden">
+              <div className="relative w-full h-full rounded-2xl md:rounded-[40px] overflow-hidden border border-white/10 group-hover:border-neon-cyan/30 shadow-2xl glass p-3 transition-all duration-500">
+                <div className="w-full h-full rounded-xl md:rounded-[30px] overflow-hidden relative">
                   <Image
-                    src="/images/Satya Prakash Image.jpeg"
+                    src="/images/satya.jpeg"
                     alt="Satya Prakash Profile"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
+                    className="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
                     width={450}
                     height={450}
                   />
+                  {/* Subtle glass overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-void/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
 

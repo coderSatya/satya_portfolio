@@ -59,7 +59,8 @@ const categories = [
   { title: 'Frontend Core', icon: '⚡', color: 'var(--color-neon-cyan)', key: 'frontend' },
   { title: 'UI & Styling', icon: '🎨', color: 'var(--color-neon-pink)', key: 'ui' },
   { title: 'State & Data', icon: '🧠', color: 'var(--color-neon-violet)', key: 'stateAndData' },
-  { title: 'Performance', icon: '🚀', color: '#00f5ff', key: 'performance' },
+  { title: 'Backend & DevOps', icon: '🚀', color: '#10b981', key: 'backendAndDevOps' },
+  { title: 'Performance', icon: '🏎️', color: '#00f5ff', key: 'performance' },
   { title: 'Development Tools', icon: '🛠️', color: '#8b5cf6', key: 'tools' },
   { title: 'AI Integration', icon: '🤖', color: '#ff2d78', key: 'ai' },
 ];
