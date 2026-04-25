@@ -8,10 +8,16 @@ export const metadata = {
     'Portfolio of Satya Prakash — Software Engineer & Full Stack Developer specializing in MERN stack, React.js, and AI-integrated systems.',
   keywords: 'Software Engineer, Full Stack Developer, MERN Stack, React.js, Next.js, Node.js, Kolkata',
   authors: [{ name: 'Satya Prakash' }],
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'Satya Prakash | Software Engineer',
     description: 'Premium portfolio of Satya Prakash — Full Stack Engineer & AI Enthusiast',
     type: 'website',
+    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'Satya Prakash' }],
   },
 };
 
