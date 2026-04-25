@@ -1,8 +1,10 @@
 'use client';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { SectionLabel } from '@/components/ui/UIElements';
+import ProjectDrawer from '@/components/ui/ProjectDrawer';
 import { portfolioData } from '@/utils/data';
 
 const { projects } = portfolioData;
@@ -13,7 +15,7 @@ const ProjectsVisual = dynamic(() => import('@/components/three/ProjectsVisual')
   loading: () => null,
 });
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, onOpenDetails }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const isFeatured = project.isFeatured;
 
@@ -23,97 +25,91 @@ function ProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      whileHover={{ y: -10 }}
-      className={`group relative h-full ${isFeatured ? 'lg:col-span-2' : ''}`}
+      whileHover={{ y: -8, rotateY: 5, rotateX: -2 }}
+      className={`group relative h-[420px] md:h-[480px] ${isFeatured ? 'lg:col-span-2' : ''}`}
+      style={{ perspective: '1200px' }}
     >
-      <div className={`relative h-full glass rounded-[2rem] p-8 md:p-10 flex flex-col border transition-all duration-500 overflow-hidden ${
-        isFeatured ? 'border-emerald-500/30 shadow-[0_0_40px_rgba(16,185,129,0.1)]' : 'border-white/5 group-hover:border-white/10'
-      }`}>
-        
-        {/* Featured Badge */}
-        {isFeatured && (
-          <div className="absolute top-6 right-6 z-20">
-            <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-bold text-emerald-400 uppercase tracking-widest animate-pulse">
-              🔥 Featured Project
-            </span>
-          </div>
-        )}
+      <div className={`relative h-full glass rounded-[2.5rem] p-8 md:p-10 flex flex-col border transition-all duration-500 overflow-hidden ${isFeatured ? 'border-emerald-500/30' : 'border-white/5 group-hover:border-white/10'
+        }`}>
 
-        {/* Project Accent Glow */}
-        <div 
-          className="absolute -top-24 -right-24 w-64 h-64 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-[80px] pointer-events-none"
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none opacity-20 group-hover:bg-cyan-500/10 transition-colors" />
+
+        {/* Category & Badge */}
+        <div className="flex justify-between items-start mb-4">
+          <span
+            className="text-[10px] uppercase tracking-[0.25em] font-mono font-bold"
+            style={{ color: project.color }}
+          >
+            {project.category}
+          </span>
+          {isFeatured && (
+            <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[8px] font-bold text-emerald-400 uppercase tracking-widest animate-pulse">
+              Featured
+            </span>
+          )}
+        </div>
+
+        {/* Project Name */}
+        <h3 className={`font-display font-black text-white leading-tight mb-3 group-hover:text-cyan-400 transition-colors ${isFeatured ? 'text-3xl md:text-4xl lg:max-w-xl' : 'text-2xl'
+          }`}>
+          {project.name}
+        </h3>
+
+        {/* Short Description */}
+        <p className={`font-body text-slate-400 leading-relaxed mb-6 line-clamp-3 ${isFeatured ? 'text-base md:text-lg lg:max-w-2xl' : 'text-sm'
+          }`}>
+          {project.description}
+        </p>
+
+        {/* Tech Stack Previews */}
+        <div className="flex flex-wrap gap-1.5 mb-6">
+          {project.tech.map((t) => (
+            <span key={t} className="px-2.5 py-1 rounded-lg bg-white/[0.02] border border-white/[0.05] text-[15px] font-mono text-slate-500">
+              {t}
+            </span>
+          ))}
+          {/* {project.tech.length > 4 && (
+            <span className="px-2 py-1 rounded-lg bg-white/[0.02] border border-white/[0.05] text-[9px] font-mono text-slate-500">
+              +{project.tech.length - 4}
+            </span>
+          )} */}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="mt-auto flex items-center gap-3">
+          <button
+            onClick={() => onOpenDetails(project)}
+            className="flex-1 px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-[10px] uppercase tracking-wider hover:bg-white/10 hover:border-white/20 transition-all group/btn"
+          >
+            <span className="flex items-center justify-center gap-2">
+              View Details
+              <svg className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </button>
+
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-2xl bg-white text-void hover:scale-110 transition-transform shadow-[0_10px_20px_rgba(255,255,255,0.1)]"
+              title="Live Demo"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          )}
+        </div>
+
+        {/* Hover Glow Effect */}
+        <div
+          className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-700 blur-[80px] pointer-events-none"
           style={{ background: project.color }}
         />
-
-        <div className={`flex flex-col gap-6 ${isFeatured ? 'lg:flex-row lg:items-start lg:gap-12' : ''}`}>
-          {/* Content Wrapper */}
-          <div className="flex-grow">
-            <div className="flex flex-col gap-3 mb-6">
-              <span 
-                className="text-[10px] uppercase tracking-[0.2em] font-mono font-bold"
-                style={{ color: project.color }}
-              >
-                {project.category}
-              </span>
-              <h3 className={`font-display font-black text-white leading-tight transition-colors ${
-                isFeatured ? 'text-3xl md:text-4xl' : 'text-2xl'
-              }`}>
-                {project.name}
-              </h3>
-            </div>
-
-            <p className={`font-body text-slate-400 leading-relaxed mb-8 ${
-              isFeatured ? 'text-base md:text-lg lg:max-w-xl' : 'text-sm'
-            }`}>
-              {project.description}
-            </p>
-          </div>
-
-          {/* Right/Bottom Sidebar for Featured */}
-          <div className={`flex flex-col ${isFeatured ? 'lg:w-1/3' : ''}`}>
-            {/* Tech Stack Bar */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {project.tech.map((t) => (
-                <span 
-                  key={t} 
-                  className="px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.05] text-[10px] font-mono text-slate-400 tracking-tight"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4 mt-auto">
-              {project.url && (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-void font-body font-bold text-sm hover:bg-white/90 transition-all duration-300 transform active:scale-95"
-                >
-                  <span>Live Demo</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              )}
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-white font-body font-bold text-sm hover:bg-white/5 hover:border-white/20 transition-all duration-300 transform active:scale-95"
-                >
-                  <span>View Code</span>
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
       </div>
     </motion.div>
   );
@@ -121,39 +117,60 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleOpenDetails = (project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedProject(null);
+  };
 
   return (
-    <section id="projects" className="py-14 md:py-20 lg:py-24 relative overflow-hidden" ref={ref}>
-      {/* 3D Background */}
+    <section id="projects" className="pt-10 md:pt-14 pb-20 md:pb-28 relative overflow-hidden" ref={ref}>
       <ProjectsVisual />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionLabel number={4} label="Case Studies" />
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6 mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="font-display font-black text-5xl md:text-7xl text-white tracking-tighter"
+            className="font-display font-black text-6xl md:text-8xl text-white tracking-tight"
           >
-            Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 opacity-80">Excellence</span>
+            Latest <span className="neon-text-cyan">Crafts</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.3 }}
-            className="font-body text-slate-400 max-w-sm text-lg leading-relaxed"
+            className="font-body text-slate-400 max-w-sm text-lg leading-relaxed italic"
           >
-            A collection of high-performance matching platforms, interactive systems, and AI-driven web architectures.
+            "Every line of code is a brushstroke in the digital landscape."
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
           {projects.map((project, i) => (
-            <ProjectCard key={project.id || i} project={project} index={i} />
+            <ProjectCard
+              key={project.id || i}
+              project={project}
+              index={i}
+              onOpenDetails={handleOpenDetails}
+            />
           ))}
         </div>
       </div>
+
+      {/* Detail Drawer */}
+      <ProjectDrawer
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={handleCloseDetails}
+      />
     </section>
   );
 }
+

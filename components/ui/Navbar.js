@@ -6,11 +6,72 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Education', href: '/education' },
+  { 
+    label: 'Education', 
+    href: '/education',
+    subLinks: [
+      { label: 'Academic Path', href: '/education#education', icon: '🎓' },
+      { label: 'Certifications', href: '/education#certifications', icon: '📜' },
+      { label: 'INT Hackathon', href: '/education#hackathon', icon: '🚀' },
+      { label: 'E-books', href: '/education#ebook', icon: '📚' },
+      { label: 'Chess Challenge', href: '/education#chess', icon: '♟️' },
+      { label: 'Extra-Curricular', href: '/education#cricket', icon: '🏏' },
+    ]
+  },
   { label: 'Experience', href: '/experience' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
 ];
+
+function NavLink({ link, isActive, pathname }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      className="relative group h-full flex items-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Link
+        href={link.href}
+        className={`relative font-body text-sm transition-colors duration-300 py-2 flex items-center gap-1 ${isActive ? 'text-neon-cyan' : 'text-slate-400 hover:text-white'}`}
+      >
+        {link.label}
+        {link.subLinks && (
+          <svg className={`w-3 h-3 transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
+        <span className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-neon-cyan to-neon-violet transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+      </Link>
+
+      {/* Dropdown Menu */}
+      <AnimatePresence>
+        {link.subLinks && isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-56 z-50 pointer-events-auto"
+          >
+            <div className="glass border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden">
+              {link.subLinks.map((sub) => (
+                <Link
+                  key={sub.href}
+                  href={sub.href}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-all group/sub"
+                >
+                  <span className="text-lg opacity-80 group-hover/sub:scale-110 group-hover/sub:opacity-100 transition-all">{sub.icon}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400 group-hover/sub:text-white">{sub.label}</span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,20 +113,15 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative group font-body text-sm transition-colors duration-300 ${isActive ? 'text-neon-cyan' : 'text-slate-400 hover:text-white'}`}
-              >
-                {link.label}
-                <span className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-neon-cyan to-neon-violet transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-              </Link>
-            );
-          })}
+        <div className="hidden lg:flex items-center gap-6 h-full">
+          {navLinks.map((link) => (
+            <NavLink 
+              key={link.href} 
+              link={link} 
+              isActive={pathname === link.href} 
+              pathname={pathname}
+            />
+          ))}
         </div>
 
         {/* CTA */}

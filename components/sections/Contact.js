@@ -84,7 +84,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-10 md:py-14 relative overflow-hidden" ref={ref}>
+    <section id="contact" className="pt-10 md:pt-14 pb-14 md:pb-20 relative overflow-hidden" ref={ref}>
       {/* Background Decorative Glow */}
       <div
         className="absolute bottom-0 right-1/2 translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-5 blur-[120px] pointer-events-none"
