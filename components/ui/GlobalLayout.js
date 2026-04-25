@@ -5,12 +5,15 @@ import { CustomCursor, ScrollProgressBar, LoadingScreen } from '@/components/ui/
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import Chatbot from '@/components/ui/Chatbot';
+import ErrorBoundary from '@/components/ui/ErrorBoundary';
 
 export default function GlobalLayout({ children }) {
   const [loading, setLoading] = useState(true);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // If we want to simulate a network load or just simple minimum time
+    // Detect touch-only devices to disable the custom cursor
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
     const timer = setTimeout(() => setLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
@@ -23,12 +26,16 @@ export default function GlobalLayout({ children }) {
       
       {!loading && (
         <>
-          <CustomCursor />
+          {!isTouchDevice && <CustomCursor />}
           <ScrollProgressBar />
           <Navbar />
-          {children}
+          <ErrorBoundary>
+            {children}
+          </ErrorBoundary>
           <Footer />
-          <Chatbot />
+          <ErrorBoundary>
+            <Chatbot />
+          </ErrorBoundary>
         </>
       )}
     </>

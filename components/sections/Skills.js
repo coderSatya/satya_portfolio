@@ -86,7 +86,7 @@ export default function Skills() {
           Tech <span className="neon-text-cyan">Arsenal</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" ref={ref}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat, i) => (
             <SkillCategory
               key={cat.key}

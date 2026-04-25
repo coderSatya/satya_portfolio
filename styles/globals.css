@@ -37,7 +37,13 @@ body {
   color: #e2e8f0;
   font-family: var(--font-body);
   overflow-x: hidden;
-  cursor: none;
+}
+
+/* Hide default cursor only on actual pointer devices that support hover (not touch) */
+@media (pointer: fine) and (hover: hover) {
+  body {
+    cursor: none;
+  }
 }
 
 /* Custom Scrollbar */

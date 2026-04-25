@@ -102,7 +102,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="flex flex-col"
           >
-            <h2 className="font-display font-black text-5xl md:text-7xl text-white leading-tight mb-8">
+            <h2 className="font-display font-black text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-8">
               Let's Build <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Something</span> <br />
               Amazing Together

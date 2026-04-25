@@ -34,15 +34,20 @@ export default function Footer() {
 
           {/* Nav links */}
           <div className="flex gap-6">
-            {['About', 'Projects', 'Skills', 'Contact'].map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="font-mono text-xs text-slate-600 hover:text-neon-cyan transition-colors"
-              >
-                {link}
-              </a>
-            ))}
+            {[
+            { label: 'Home', href: '/' },
+            { label: 'Experience', href: '/experience' },
+            { label: 'Projects', href: '/projects' },
+            { label: 'Contact', href: '/contact' },
+          ].map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="font-mono text-xs text-slate-600 hover:text-neon-cyan transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
           </div>
         </div>
       </div>

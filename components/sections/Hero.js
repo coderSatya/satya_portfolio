@@ -178,10 +178,12 @@ export default function Hero() {
                 <div className="w-full h-full rounded-xl md:rounded-[30px] overflow-hidden relative">
                   <Image
                     src="/images/satya.jpeg"
-                    alt="Satya Prakash Profile"
+                    alt="Satya Prakash - Software Engineer"
                     className="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-110"
                     width={450}
                     height={450}
+                    loading="eager"
+                    priority
                   />
                   {/* Subtle glass overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-void/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { SectionLabel } from '@/components/ui/UIElements';
 import { portfolioData } from '@/utils/data';
@@ -76,7 +75,7 @@ export default function About() {
                 className="pt-4"
               >
                 <p className="text-slate-300 font-medium mb-4 italic">
-                  "Explore my portfolio to see my skils, projects, and experience."
+                  "Explore my portfolio to see my skills, projects, and experience."
                 </p>
                 <a
                   href="#projects"

@@ -37,17 +37,19 @@ export default function EducationPage() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       </div>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      </div>
-
       <EbookPromo />
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-      </div>      <ChessChallenge />
+      </div>
+
+      <ChessChallenge />
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      </div>
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">

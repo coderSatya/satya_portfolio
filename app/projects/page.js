@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="max-w-7xl mx-auto px-6">
+    <main className="relative bg-void overflow-hidden min-h-screen">
       <Projects />
     </main>
   );

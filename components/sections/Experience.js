@@ -22,7 +22,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "circOut" } }
 };
 
-function ExperienceCard({ job, index, inView }) {
+function ExperienceCard({ job }) {
   const isCurrent = job.duration.toLowerCase().includes('present');
 
   return (

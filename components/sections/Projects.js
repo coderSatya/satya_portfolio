@@ -26,7 +26,7 @@ function ProjectCard({ project, index, onOpenDetails }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       whileHover={{ y: -8, rotateY: 5, rotateX: -2 }}
-      className={`group relative h-[420px] md:h-[480px] ${isFeatured ? 'lg:col-span-2' : ''}`}
+      className={`group relative min-h-[460px] md:min-h-[540px] h-auto ${isFeatured ? 'lg:col-span-2' : ''}`}
       style={{ perspective: '1200px' }}
     >
       <div className={`relative h-full glass rounded-[2.5rem] p-8 md:p-10 flex flex-col border transition-all duration-500 overflow-hidden ${isFeatured ? 'border-emerald-500/30' : 'border-white/5 group-hover:border-white/10'
@@ -65,7 +65,7 @@ function ProjectCard({ project, index, onOpenDetails }) {
         {/* Tech Stack Previews */}
         <div className="flex flex-wrap gap-1.5 mb-6">
           {project.tech.map((t) => (
-            <span key={t} className="px-2.5 py-1 rounded-lg bg-white/[0.02] border border-white/[0.05] text-[15px] font-mono text-slate-500">
+            <span key={t} className="px-2.5 py-1 rounded-lg bg-white/[0.02] border border-white/[0.05] text-[11px] font-mono text-slate-500">
               {t}
             </span>
           ))}

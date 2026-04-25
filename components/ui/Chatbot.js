@@ -185,7 +185,7 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-50 w-[340px] sm:w-[380px] rounded-2xl overflow-hidden"
+            className="fixed bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-[380px] max-w-[420px] rounded-2xl overflow-hidden"
             style={{
               background: 'rgba(8, 13, 31, 0.95)',
               border: '1px solid rgba(0,245,255,0.15)',

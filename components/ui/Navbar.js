@@ -76,6 +76,7 @@ function NavLink({ link, isActive, pathname }) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileEducationOpen, setMobileEducationOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -178,30 +179,83 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-white/5"
+            className="lg:hidden glass border-t border-white/5 overflow-hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
+                const hasSubLinks = link.subLinks && link.subLinks.length > 0;
+                
                 return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`font-body transition-colors ${isActive ? 'text-neon-cyan' : 'text-slate-300 hover:text-white'}`}
-                  >
-                    {link.label}
-                  </Link>
+                  <div key={link.href} className="flex flex-col gap-4">
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href={link.href}
+                        onClick={() => !hasSubLinks && setMenuOpen(false)}
+                        className={`text-lg font-display font-bold transition-colors ${isActive ? 'text-neon-cyan' : 'text-slate-300'}`}
+                      >
+                        {link.label}
+                      </Link>
+                      {hasSubLinks && (
+                        <button 
+                          onClick={() => setMobileEducationOpen(!mobileEducationOpen)}
+                          className="p-2 bg-white/5 rounded-lg border border-white/10"
+                        >
+                          <svg className={`w-4 h-4 text-neon-cyan transition-transform duration-300 ${mobileEducationOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Mobile Sublinks Accordion */}
+                    {hasSubLinks && (
+                      <AnimatePresence>
+                        {mobileEducationOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="bg-white/5 rounded-2xl border border-white/5 overflow-hidden"
+                          >
+                            <div className="p-2 grid grid-cols-1 gap-1">
+                              {link.subLinks.map((sub) => (
+                                <Link
+                                  key={sub.href}
+                                  href={sub.href}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="flex items-center gap-3 px-4 py-3 rounded-xl active:bg-white/10"
+                                >
+                                  <span className="text-xl">{sub.icon}</span>
+                                  <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400">{sub.label}</span>
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
+                  </div>
                 );
               })}
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="mt-4 px-4 py-3 rounded-lg text-sm text-center font-body font-medium text-void"
-                style={{ background: 'var(--color-neon-cyan)' }}
-              >
-                Hire Me
-              </Link>
+              
+              <div className="pt-4 border-t border-white/5 flex flex-col gap-4">
+                <a
+                  href="/pdf/Satya_Prakash_Resume.pdf"
+                  download
+                  className="px-4 py-4 rounded-2xl border border-neon-cyan/30 text-neon-cyan font-bold text-center"
+                >
+                  Resume ↓
+                </a>
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-4 rounded-2xl font-bold text-void text-center shadow-lg"
+                  style={{ background: 'var(--color-neon-cyan)' }}
+                >
+                  Hire Me
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ExperiencePage() {
   return (
-    <main className="min-h-screen">
+    <main className="relative bg-void overflow-hidden min-h-screen">
       <Experience />
     </main>
   );
