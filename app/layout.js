@@ -16,8 +16,24 @@ export const metadata = {
   openGraph: {
     title: 'Satya Prakash | Software Engineer',
     description: 'Premium portfolio of Satya Prakash — Full Stack Engineer & AI Enthusiast',
+    url: 'https://satyaportfolio-pi.vercel.app',
+    siteName: 'Satya Prakash Portfolio',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Satya Prakash | Software Engineer Portfolio',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
-    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'Satya Prakash' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Satya Prakash | Software Engineer',
+    description: 'Premium portfolio of Satya Prakash — Full Stack Engineer & AI Enthusiast',
+    images: ['/og-image.png'],
   },
 };
 

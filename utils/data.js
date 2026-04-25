@@ -9,7 +9,7 @@ export const portfolioData = {
     phone: "+91-8506056814",
     email: "sprakash6233@gmail.com",
     github: "https://github.com/coderSatya",
-    linkedin: "https://linkedin.com/in/satya-prakash-sp",
+    linkedin: "https://www.linkedin.com/in/satya-prakash-91388b1b3/",
     instagram: "https://www.instagram.com/satya.prakash0715",
     tagline: "Building Scalable Web Apps with React, Next.js & AI",
     summary:
@@ -476,7 +476,7 @@ PERSONAL INFO:
 - Location: Kolkata, India
 - Email: sprakash6233@gmail.com
 - Phone: +91-8506056814
-- LinkedIn: https://linkedin.com/in/satya-prakash-sp
+- LinkedIn: https://www.linkedin.com/in/satya-prakash-91388b1b3/
 - GitHub: https://github.com/coderSatya
 
 CAREER CONTEXT:

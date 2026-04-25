@@ -123,18 +123,18 @@ export default function Hero() {
                 </div>
                 <span className="font-mono text-xs">Instagram</span>
               </a>
-              <div className="flex items-center gap-3 text-slate-400 group">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+              <a href={`tel:${personal.phone}`} className="flex items-center gap-3 text-slate-400 hover:text-neon-pink transition-colors group">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon-pink/50 transition-colors">
                   <svg className="w-4 h-4 text-neon-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <span className="font-mono text-xs">{personal.phone}</span>
-              </div>
-              <div className="flex items-center gap-3 text-slate-400 group col-span-1 sm:col-span-2">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+              </a>
+              <a href={`mailto:${personal.email}`} className="flex items-center gap-3 text-slate-400 hover:text-neon-cyan transition-colors group col-span-1 sm:col-span-2">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-neon-cyan/50 transition-colors">
                   <svg className="w-4 h-4 text-neon-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <span className="font-mono text-xs truncate">{personal.email}</span>
-              </div>
+              </a>
             </div>
 
             {/* CTA Buttons */}
