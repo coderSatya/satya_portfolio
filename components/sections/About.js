@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { SectionLabel } from '@/components/ui/UIElements';
 import { portfolioData } from '@/utils/data';
+import Link from 'next/link';
 
 const { personal } = portfolioData;
 
