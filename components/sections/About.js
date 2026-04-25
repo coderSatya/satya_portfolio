@@ -77,15 +77,15 @@ export default function About() {
                 <p className="text-slate-300 font-medium mb-4 italic">
                   "Explore my portfolio to see my skills, projects, and experience."
                 </p>
-                <a
-                  href="#projects"
+                <Link
+                  href="/projects"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:bg-neon-cyan hover:text-void hover:translate-x-2 transition-all duration-300"
                 >
                   View Projects
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </Link>
               </motion.div>
             </div>
 
